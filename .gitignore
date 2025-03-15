@@ -3,12 +3,20 @@ node_modules/
 .pnp/
 .pnp.js
 
-
+# Virtual Environment
+venv/
 .venv/
-.pytest_cache
+env/
+.env/
+.pytest_cache/
 
 # Testing
 coverage/
+.coverage
+
+# Logs
+*.log
+app.log
 
 # Next.js
 .next/
@@ -36,7 +44,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
 build/
 develop-eggs/
 downloads/
