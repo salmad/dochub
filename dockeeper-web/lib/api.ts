@@ -1,10 +1,10 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 
 export async function processDocument(file: File, token: string) {
   const formData = new FormData();
   formData.append('file', file);
 
-  const response = await fetch(`${API_URL}/documents/process`, {
+  const response = await fetch(`${API_BASE_URL}/documents/process`, {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -21,7 +21,7 @@ export async function processDocument(file: File, token: string) {
 }
 
 export async function getDocuments(token: string) {
-  const response = await fetch(`${API_URL}/documents`, {
+  const response = await fetch(`${API_BASE_URL}/documents`, {
     headers: {
       'Authorization': `Bearer ${token}`,
       'Accept': 'application/json',
@@ -37,7 +37,7 @@ export async function getDocuments(token: string) {
 }
 
 export async function searchDocuments(query: string, token: string) {
-  const response = await fetch(`${API_URL}/documents/search?query=${encodeURIComponent(query)}`, {
+  const response = await fetch(`${API_BASE_URL}/documents/search?query=${encodeURIComponent(query)}`, {
     headers: {
       'Authorization': `Bearer ${token}`,
       'Accept': 'application/json',
@@ -53,7 +53,7 @@ export async function searchDocuments(query: string, token: string) {
 }
 
 export async function getCategorizedFields(token: string) {
-  const response = await fetch(`${API_URL}/documents/categorize`, {
+  const response = await fetch(`${API_BASE_URL}/documents/categorize`, {
     headers: {
       'Authorization': `Bearer ${token}`,
       'Accept': 'application/json',
