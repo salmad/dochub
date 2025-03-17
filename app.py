@@ -8,7 +8,8 @@ import os
 # Configuration and Setup
 # ============================================================================
 # Use environment variable for production, fallback to localhost for development
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+API_URL = "http://localhost:8000"
+
 if not API_URL:
     st.error("API_URL environment variable is not set!")
     st.stop()

@@ -4,7 +4,7 @@ builder = "nixpacks"
 [[services]]
 name = "backend"
 directory = "."
-startCommand = "uvicorn api:app --host 0.0.0.0 --port $PORT"
+startCommand = "uvicorn api:app --host 0.0.0.0 --port 8000"
 healthcheckPath = "/health"
 healthcheckTimeout = 100
 port = 8000

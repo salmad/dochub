@@ -364,6 +364,10 @@ async def search_documents(
         logger.error(f"Search error: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
 @app.get("/documents/categorize")
 async def categorize_fields(user_id: str = Depends(get_current_user)):
     try:
@@ -455,4 +459,4 @@ async def categorize_fields(user_id: str = Depends(get_current_user)):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000) 
+    uvicorn.run(app, host="localhost", port=8000) 
