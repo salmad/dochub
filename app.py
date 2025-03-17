@@ -2,11 +2,16 @@ import streamlit as st
 import requests
 import json
 from datetime import datetime
+import os
 
 # ============================================================================
 # Configuration and Setup
 # ============================================================================
-API_URL = "http://localhost:8000"  # FastAPI backend URL
+# Use environment variable for production, fallback to localhost for development
+API_URL = os.getenv("API_URL", "http://localhost:8000")
+if not API_URL:
+    st.error("API_URL environment variable is not set!")
+    st.stop()
 
 st.set_page_config(
     page_title="DocKeeper - Passport Scanner",
