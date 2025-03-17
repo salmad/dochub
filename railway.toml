@@ -1,13 +1,5 @@
 [build]
 builder = "nixpacks"
-buildCommand = "echo 'Building...'"
-
-[deploy]
-startCommand = "echo 'Starting...'"
-healthcheckPath = "/"
-healthcheckTimeout = 100
-restartPolicyType = "on-failure"
-restartPolicyMaxRetries = 10
 
 [[services]]
 name = "backend"
